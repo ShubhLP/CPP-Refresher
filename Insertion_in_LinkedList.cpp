@@ -105,7 +105,7 @@ int main()
     linkedList_traversal(head);
 
     cout << endl << "Insertion After a Node:";
-    head = insertBefore(head, 2, 45);
+    head = insertAfter(head, second, 45);
     linkedList_traversal(head);
 
     cout << endl << "Insertion at the End:";
