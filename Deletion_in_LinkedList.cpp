@@ -50,14 +50,14 @@ struct Node *deleteBefore(struct Node *head, int index)
 {
     struct Node *ptr = head;
     int i = 0;
-    while(i != index - 2)
+    while (i != index - 2)
     {
-        ptr = ptr -> next;
+        ptr = ptr->next;
         i++;
     }
     struct Node *prevPtr = ptr;
-    ptr = ptr -> next;
-    prevPtr -> next = ptr -> next;
+    ptr = ptr->next;
+    prevPtr->next = ptr->next;
     free(ptr);
     return head;
 }
@@ -66,14 +66,13 @@ struct Node *deleteBefore(struct Node *head, int index)
 struct Node *deleteAfter(struct Node *head, struct Node *prevPtr)
 {
     struct Node *ptr = head;
-    while(ptr != prevPtr -> next)
+    while (ptr != prevPtr->next)
     {
-        ptr = ptr -> next;
+        ptr = ptr->next;
     }
-    prevPtr -> next = ptr -> next;
+    prevPtr->next = ptr->next;
     free(ptr);
     return head;
-    
 }
 
 // To delete After a Node using Index
@@ -81,14 +80,14 @@ struct Node *deleteAfter2(struct Node *head, int index)
 {
     struct Node *ptr = head;
     int i = 0;
-    while(i != index)
+    while (i != index)
     {
-        ptr = ptr -> next;
+        ptr = ptr->next;
         i++;
     }
     struct Node *prevPtr = ptr;
-    ptr = ptr -> next;
-    prevPtr -> next = ptr -> next;
+    ptr = ptr->next;
+    prevPtr->next = ptr->next;
     free(ptr);
     return head;
 }
@@ -127,13 +126,11 @@ int main()
     head = deleteAtStart(head);
     linkedList_traversal(head);
 
-    cout << endl
-         << "Delete at the End: ";
+    cout << endl << "Delete at the End: ";
     head = deleteAtEnd(head);
     linkedList_traversal(head);
 
-    cout << endl
-         << "Delete Before a Node: ";
+    cout << endl << "Delete Before a Node: ";
     head = deleteBefore(head, 2);
     linkedList_traversal(head);
 
